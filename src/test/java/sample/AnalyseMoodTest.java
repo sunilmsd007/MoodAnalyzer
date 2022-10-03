@@ -8,29 +8,44 @@ public class AnalyseMoodTest {
 	@Test
 	public void givenMessageShouldReturnSad() {
 		AnalyseMood analyse = new AnalyseMood("I am in Sad Mood");
-		String actualResult = analyse.moodAnalyser();
-		Assert.assertEquals("Sad", actualResult);
+		try {
+			String actualResult = analyse.moodAnalyser();
+			Assert.assertEquals("Sad", actualResult);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Test
 	public void givenMessageShouldReturnHappy() {
 		AnalyseMood analyse = new AnalyseMood("I am in Happy Mood");
-		String actualResult = analyse.moodAnalyser();
-		Assert.assertEquals("Happy", actualResult);
+		try {
+			String actualResult = analyse.moodAnalyser();
+			Assert.assertEquals("Happy", actualResult);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Test
 	public void givenMessageAnyShouldReturnHappy() {
 		AnalyseMood analyse = new AnalyseMood("I am in any Mood");
-		String actualResult = analyse.moodAnalyser();
-		Assert.assertEquals("Happy", actualResult);
+		try {
+			String actualResult = analyse.moodAnalyser();
+			Assert.assertEquals("Happy", actualResult);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Test
-	public void givenMessageNullShouldReturnHappy() {
-		AnalyseMood analyse = new AnalyseMood(null);
-		String actualResult = analyse.moodAnalyser();
-		Assert.assertEquals("Happy", actualResult);
+	public void messageShouldBeInvalidMood() {
+		AnalyseMood testmood = new AnalyseMood(null);
+		try {
+			testmood.moodAnalyser();
+		} catch (Exception e) {
+			Assert.assertEquals("Invalid Mood", e.getMessage());
+		}
 	}
 
 }
