@@ -9,7 +9,7 @@ public class AnalyseMood {
 	}
 
 	// method to analyse mood by reading string
-	public String moodAnalyser() {
+	public String moodAnalyser() throws MoodAnalysisException {
 		try {
 			if (message.contains("Happy")) {
 				return "Happy";
@@ -21,15 +21,19 @@ public class AnalyseMood {
 				return null;
 			}
 		} catch (Exception e) {
-			// when user provides null input, handling the exception by returning Happy
-			return "Happy";
+			// when user provides null input, informing the user by returning Invalid mood
+			throw new MoodAnalysisException("Invalid Mood");
 		}
 	}
 
 	public static void main(String[] args) {
 		AnalyseMood analyse = new AnalyseMood(null);
-		String moodHappy = analyse.moodAnalyser();
-		System.out.println(moodHappy);
+		try {
+			String moodHappy = analyse.moodAnalyser();
+			System.out.println(moodHappy);
+		} catch (Exception p) {
+			p.printStackTrace();
+		}
 
 	}
 }

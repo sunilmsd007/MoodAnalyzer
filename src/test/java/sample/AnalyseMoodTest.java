@@ -18,17 +18,19 @@ public class AnalyseMoodTest {
 		String actualResult = analyse.moodAnalyser();
 		Assert.assertEquals("Happy", actualResult);
 	}
-	  @Test
-      public void givenMessageAnyShouldReturnHappy() {
-              AnalyseMood analyse = new AnalyseMood("I am in any Mood");
-              String actualResult = analyse.moodAnalyser();
-              Assert.assertEquals("Happy", actualResult);
-      }
-       @Test
-      public void givenMessageNullShouldReturnHappy() {
-              AnalyseMood analyse = new AnalyseMood(null);
-              String actualResult = analyse.moodAnalyser();
-              Assert.assertEquals("Happy", actualResult);
-      }
+
+	@Test
+	public void givenMessageAnyShouldReturnHappy() {
+		AnalyseMood analyse = new AnalyseMood("I am in any Mood");
+		String actualResult = analyse.moodAnalyser();
+		Assert.assertEquals("Happy", actualResult);
+	}
+
+	@Test
+	public void givenMessageNullShouldReturnHappy() {
+		AnalyseMood analyse = new AnalyseMood(null);
+		String actualResult = analyse.moodAnalyser();
+		Assert.assertEquals("Happy", actualResult);
+	}
 
 }
