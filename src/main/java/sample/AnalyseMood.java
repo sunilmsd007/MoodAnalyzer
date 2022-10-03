@@ -7,7 +7,10 @@ public class AnalyseMood {
 			return "Happy";
 		} else if (message.contains("Sad")) {
 			return "Sad";
-		} else {
+		} else if (message.contains("any")) {
+			return "Happy";
+		}
+		else {
 			return null;
 		}
 	}
@@ -18,5 +21,7 @@ public class AnalyseMood {
 		System.out.println(moodHappy);
 		String moodSad = analyse.moodAnalyser("I am Sad");
 		System.out.println(moodSad);
+		String moodAny = analyse.moodAnalyser("I am in any mood");
+		System.out.println(moodAny);
 	}
 }
